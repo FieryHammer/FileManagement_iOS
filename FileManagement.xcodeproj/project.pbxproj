@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F138D9BC2030993600829548 /* FileModelIntTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F138D9BB2030993600829548 /* FileModelIntTests.m */; };
+		F138D9C020309ACE00829548 /* FileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F138D9BF20309ACE00829548 /* FileTableViewCell.m */; };
 		F1E7A5AB202F48F30035967F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E7A5AA202F48F30035967F /* AppDelegate.m */; };
-		F1E7A5AE202F48F30035967F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E7A5AD202F48F30035967F /* ViewController.m */; };
 		F1E7A5B1202F48F30035967F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E7A5AF202F48F30035967F /* Main.storyboard */; };
 		F1E7A5B3202F48F30035967F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E7A5B2202F48F30035967F /* Assets.xcassets */; };
 		F1E7A5B6202F48F30035967F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E7A5B4202F48F30035967F /* LaunchScreen.storyboard */; };
 		F1E7A5B9202F48F30035967F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E7A5B8202F48F30035967F /* main.m */; };
-		F1E7A5C3202F48F30035967F /* FileManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E7A5C2202F48F30035967F /* FileManagementTests.m */; };
+		F1E7A5D1202F49CF0035967F /* FileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E7A5D0202F49CF0035967F /* FileModel.m */; };
+		F1E7A5D4202F4FEC0035967F /* FileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E7A5D3202F4FEC0035967F /* FileTableViewController.m */; };
+		F1E7A5E5203076F30035967F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E7A5D9203076F30035967F /* libOCMock.a */; };
+		F1E7A5E7203077C50035967F /* FileModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E7A5E6203077C50035967F /* FileModelTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +31,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F138D9BB2030993600829548 /* FileModelIntTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileModelIntTests.m; sourceTree = "<group>"; };
+		F138D9BE20309ACE00829548 /* FileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileTableViewCell.h; sourceTree = "<group>"; };
+		F138D9BF20309ACE00829548 /* FileTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileTableViewCell.m; sourceTree = "<group>"; };
 		F1E7A5A6202F48F20035967F /* FileManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E7A5A9202F48F20035967F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F1E7A5AA202F48F30035967F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F1E7A5AC202F48F30035967F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F1E7A5AD202F48F30035967F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F1E7A5B0202F48F30035967F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1E7A5B2202F48F30035967F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1E7A5B5202F48F30035967F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1E7A5B7202F48F30035967F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1E7A5B8202F48F30035967F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1E7A5BE202F48F30035967F /* FileManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileManagementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1E7A5C2202F48F30035967F /* FileManagementTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManagementTests.m; sourceTree = "<group>"; };
 		F1E7A5C4202F48F30035967F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E7A5CF202F49CF0035967F /* FileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileModel.h; sourceTree = "<group>"; };
+		F1E7A5D0202F49CF0035967F /* FileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileModel.m; sourceTree = "<group>"; };
+		F1E7A5D2202F4FEC0035967F /* FileTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileTableViewController.h; sourceTree = "<group>"; };
+		F1E7A5D3202F4FEC0035967F /* FileTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileTableViewController.m; sourceTree = "<group>"; };
+		F1E7A5D9203076F30035967F /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		F1E7A5DB203076F30035967F /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		F1E7A5DC203076F30035967F /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		F1E7A5DD203076F30035967F /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		F1E7A5DE203076F30035967F /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		F1E7A5DF203076F30035967F /* OCMFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMFunctions.h; sourceTree = "<group>"; };
+		F1E7A5E0203076F30035967F /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		F1E7A5E1203076F30035967F /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		F1E7A5E2203076F30035967F /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		F1E7A5E3203076F30035967F /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		F1E7A5E4203076F30035967F /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		F1E7A5E6203077C50035967F /* FileModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileModelTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,16 +74,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E7A5E5203076F30035967F /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F138D9BD20309AB300829548 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F138D9BE20309ACE00829548 /* FileTableViewCell.h */,
+				F138D9BF20309ACE00829548 /* FileTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F1E7A59D202F48F20035967F = {
 			isa = PBXGroup;
 			children = (
 				F1E7A5A8202F48F20035967F /* FileManagement */,
+				F1E7A5D8203076F30035967F /* Libraries */,
 				F1E7A5C1202F48F30035967F /* FileManagementTests */,
 				F1E7A5A7202F48F20035967F /* Products */,
 			);
@@ -81,10 +112,10 @@
 		F1E7A5A8202F48F20035967F /* FileManagement */ = {
 			isa = PBXGroup;
 			children = (
+				F1E7A5CE202F49940035967F /* Models */,
+				F1E7A5CD202F48FB0035967F /* Controllers */,
 				F1E7A5A9202F48F20035967F /* AppDelegate.h */,
 				F1E7A5AA202F48F30035967F /* AppDelegate.m */,
-				F1E7A5AC202F48F30035967F /* ViewController.h */,
-				F1E7A5AD202F48F30035967F /* ViewController.m */,
 				F1E7A5AF202F48F30035967F /* Main.storyboard */,
 				F1E7A5B2202F48F30035967F /* Assets.xcassets */,
 				F1E7A5B4202F48F30035967F /* LaunchScreen.storyboard */,
@@ -97,10 +128,56 @@
 		F1E7A5C1202F48F30035967F /* FileManagementTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1E7A5C2202F48F30035967F /* FileManagementTests.m */,
+				F1E7A5E6203077C50035967F /* FileModelTests.m */,
 				F1E7A5C4202F48F30035967F /* Info.plist */,
+				F138D9BB2030993600829548 /* FileModelIntTests.m */,
 			);
 			path = FileManagementTests;
+			sourceTree = "<group>";
+		};
+		F1E7A5CD202F48FB0035967F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F138D9BD20309AB300829548 /* Cells */,
+				F1E7A5D2202F4FEC0035967F /* FileTableViewController.h */,
+				F1E7A5D3202F4FEC0035967F /* FileTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1E7A5CE202F49940035967F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1E7A5CF202F49CF0035967F /* FileModel.h */,
+				F1E7A5D0202F49CF0035967F /* FileModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1E7A5D8203076F30035967F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F1E7A5D9203076F30035967F /* libOCMock.a */,
+				F1E7A5DA203076F30035967F /* OCMock */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		F1E7A5DA203076F30035967F /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				F1E7A5DB203076F30035967F /* OCMockObject.h */,
+				F1E7A5DC203076F30035967F /* OCMMacroState.h */,
+				F1E7A5DD203076F30035967F /* OCMock.h */,
+				F1E7A5DE203076F30035967F /* NSNotificationCenter+OCMAdditions.h */,
+				F1E7A5DF203076F30035967F /* OCMFunctions.h */,
+				F1E7A5E0203076F30035967F /* OCMStubRecorder.h */,
+				F1E7A5E1203076F30035967F /* OCMRecorder.h */,
+				F1E7A5E2203076F30035967F /* OCMLocation.h */,
+				F1E7A5E3203076F30035967F /* OCMConstraint.h */,
+				F1E7A5E4203076F30035967F /* OCMArg.h */,
+			);
+			path = OCMock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E7A5AE202F48F30035967F /* ViewController.m in Sources */,
 				F1E7A5B9202F48F30035967F /* main.m in Sources */,
+				F1E7A5D4202F4FEC0035967F /* FileTableViewController.m in Sources */,
 				F1E7A5AB202F48F30035967F /* AppDelegate.m in Sources */,
+				F138D9C020309ACE00829548 /* FileTableViewCell.m in Sources */,
+				F1E7A5D1202F49CF0035967F /* FileModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E7A5C3202F48F30035967F /* FileManagementTests.m in Sources */,
+				F1E7A5E7203077C50035967F /* FileModelTests.m in Sources */,
+				F138D9BC2030993600829548 /* FileModelIntTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +464,14 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/Libraries";
 				INFOPLIST_FILE = FileManagementTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mhorvath.FileManagementTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -398,8 +484,14 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/Libraries";
 				INFOPLIST_FILE = FileManagementTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mhorvath.FileManagementTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
