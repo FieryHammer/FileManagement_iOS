@@ -29,7 +29,7 @@ static CGFloat const kBounceValue = 20.0f;
 @synthesize contentViewLeftConstraint = _contentViewLeftConstraint;
 @synthesize myContentView = _myContentView;
 
-
+//GitHub connection Test comment
 //Source: https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views
 
 - (IBAction)buttonClicked:(id)sender {
