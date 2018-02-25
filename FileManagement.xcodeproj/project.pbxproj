@@ -11,6 +11,8 @@
 		D762E0F364AFDF6E019AB304 /* Pods_FileManagementTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C410A32D6E2343F822B8D867 /* Pods_FileManagementTests.framework */; };
 		F138D9BC2030993600829548 /* FileModelIntTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F138D9BB2030993600829548 /* FileModelIntTests.m */; };
 		F138D9C020309ACE00829548 /* FileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F138D9BF20309ACE00829548 /* FileTableViewCell.m */; };
+		F1BF642F20431BE100776CEC /* CocoaFileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BF642E20431BE100776CEC /* CocoaFileTableViewCell.m */; };
+		F1BF643220431DE100776CEC /* CocoaFileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BF643120431DE100776CEC /* CocoaFileTableViewController.m */; };
 		F1E7A5AB202F48F30035967F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E7A5AA202F48F30035967F /* AppDelegate.m */; };
 		F1E7A5B1202F48F30035967F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E7A5AF202F48F30035967F /* Main.storyboard */; };
 		F1E7A5B3202F48F30035967F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E7A5B2202F48F30035967F /* Assets.xcassets */; };
@@ -42,6 +44,10 @@
 		F138D9BB2030993600829548 /* FileModelIntTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileModelIntTests.m; sourceTree = "<group>"; };
 		F138D9BE20309ACE00829548 /* FileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileTableViewCell.h; sourceTree = "<group>"; };
 		F138D9BF20309ACE00829548 /* FileTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileTableViewCell.m; sourceTree = "<group>"; };
+		F1BF642D20431BE100776CEC /* CocoaFileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaFileTableViewCell.h; sourceTree = "<group>"; };
+		F1BF642E20431BE100776CEC /* CocoaFileTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaFileTableViewCell.m; sourceTree = "<group>"; };
+		F1BF643020431DE100776CEC /* CocoaFileTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaFileTableViewController.h; sourceTree = "<group>"; };
+		F1BF643120431DE100776CEC /* CocoaFileTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaFileTableViewController.m; sourceTree = "<group>"; };
 		F1E7A5A6202F48F20035967F /* FileManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E7A5A9202F48F20035967F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F1E7A5AA202F48F30035967F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 			children = (
 				F138D9BE20309ACE00829548 /* FileTableViewCell.h */,
 				F138D9BF20309ACE00829548 /* FileTableViewCell.m */,
+				F1BF642D20431BE100776CEC /* CocoaFileTableViewCell.h */,
+				F1BF642E20431BE100776CEC /* CocoaFileTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -173,6 +181,8 @@
 				F138D9BD20309AB300829548 /* Cells */,
 				F1E7A5D2202F4FEC0035967F /* FileTableViewController.h */,
 				F1E7A5D3202F4FEC0035967F /* FileTableViewController.m */,
+				F1BF643020431DE100776CEC /* CocoaFileTableViewController.h */,
+				F1BF643120431DE100776CEC /* CocoaFileTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -423,10 +433,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E7A5B9202F48F30035967F /* main.m in Sources */,
+				F1BF642F20431BE100776CEC /* CocoaFileTableViewCell.m in Sources */,
 				F1E7A5D4202F4FEC0035967F /* FileTableViewController.m in Sources */,
 				F1E7A5AB202F48F30035967F /* AppDelegate.m in Sources */,
 				F138D9C020309ACE00829548 /* FileTableViewCell.m in Sources */,
 				F1E7A5D1202F49CF0035967F /* FileModel.m in Sources */,
+				F1BF643220431DE100776CEC /* CocoaFileTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
