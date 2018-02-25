@@ -1,0 +1,6 @@
+framework module Pods_FileManagement {
+  umbrella header "Pods-FileManagement-umbrella.h"
+
+  export *
+  module * { export * }
+}
