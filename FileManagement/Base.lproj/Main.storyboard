@@ -27,30 +27,66 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9v-5c-Rbf">
+                                            <rect key="frame" x="118" y="16" width="276" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kf4-G8-Zn9">
                                             <rect key="frame" x="34" y="22" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9v-5c-Rbf">
-                                            <rect key="frame" x="118" y="16" width="276" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Modified Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji8-QQ-BVX">
-                                            <rect key="frame" x="118" y="38" width="276" height="21"/>
+                                            <rect key="frame" x="118" y="40" width="276" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5c-Ne-XZT">
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-dD-by9">
+                                            <rect key="frame" x="0.0" y="37" width="10" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KDQ-Dk-n5O">
+                                            <rect key="frame" x="398" y="0.0" width="16" height="75"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1l-05-0OG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="75"/>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hx1-X8-rXB">
+                                                    <rect key="frame" x="8" y="0.0" width="8" height="75"/>
+                                                    <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hx1-X8-rXB" firstAttribute="centerX" secondItem="KDQ-Dk-n5O" secondAttribute="centerX" constant="4" id="G22-0G-BEL"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="KDQ-Dk-n5O" secondAttribute="trailing" id="372-e0-302"/>
+                                        <constraint firstAttribute="trailing" secondItem="KDQ-Dk-n5O" secondAttribute="trailing" id="Tnk-zB-gnv"/>
+                                        <constraint firstItem="KDQ-Dk-n5O" firstAttribute="top" secondItem="XBM-1a-Z42" secondAttribute="top" id="wbk-ym-2Au"/>
+                                        <constraint firstAttribute="bottom" secondItem="KDQ-Dk-n5O" secondAttribute="bottom" id="xI3-0L-JC4"/>
+                                        <constraint firstItem="KDQ-Dk-n5O" firstAttribute="top" secondItem="XBM-1a-Z42" secondAttribute="top" id="xbk-dh-GSh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bottomColoredBar" destination="rxE-dD-by9" id="g7i-HP-sWn"/>
                                     <outlet property="fileNameLabel" destination="V9v-5c-Rbf" id="Ynz-kz-LL5"/>
                                     <outlet property="fileTypeImageView" destination="Kf4-G8-Zn9" id="g9m-XT-qUH"/>
+                                    <outlet property="folderBar" destination="KDQ-Dk-n5O" id="0gn-XP-6Ky"/>
                                     <outlet property="modDateLabel" destination="Ji8-QQ-BVX" id="cSd-s1-oRu"/>
+                                    <outlet property="topColoredBar" destination="a5c-Ne-XZT" id="f7G-Mc-O5c"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

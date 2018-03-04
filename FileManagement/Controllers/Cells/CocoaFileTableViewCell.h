@@ -14,5 +14,8 @@
 @property (nonatomic, weak) IBOutlet UIImageView *fileTypeImageView;
 @property (nonatomic, weak) IBOutlet UILabel *fileNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *modDateLabel;
+@property (nonatomic, weak) IBOutlet UIStackView *folderBar;
+@property (nonatomic, weak) IBOutlet UIView *topColoredBar;
+@property (nonatomic, weak) IBOutlet UIView *bottomColoredBar;
 
 @end

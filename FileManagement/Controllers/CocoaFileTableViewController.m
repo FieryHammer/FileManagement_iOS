@@ -92,9 +92,26 @@
     cell.fileTypeImageView.image = image;
     
     
-//    if(file.isFolder) {
-//        cell.folderMarkImageView.image = [UIImage imageNamed:@"bar_folderMark"];
-//    }
+    if(!file.isFolder) {
+        cell.folderBar.hidden = YES;
+    }
+    
+    if(!file.isBlue && !file.isOrange) {
+        cell.topColoredBar.backgroundColor = [UIColor clearColor];
+        cell.bottomColoredBar.backgroundColor = [UIColor clearColor];
+    }
+    else if(file.isBlue && !file.isOrange) {
+        cell.topColoredBar.backgroundColor = [UIColor colorNamed:@"Color_BlueBar"];
+        cell.bottomColoredBar.backgroundColor = [UIColor colorNamed:@"Color_BlueBar"];
+    }
+    else if(!file.isBlue && file.isOrange) {
+        cell.topColoredBar.backgroundColor = [UIColor colorNamed:@"Color_OrangeBar"];
+        cell.bottomColoredBar.backgroundColor = [UIColor colorNamed:@"Color_OrangeBar"];
+    }
+    else if(file.isBlue && file.isOrange) {
+        cell.topColoredBar.backgroundColor = [UIColor colorNamed:@"Color_OrangeBar"];
+        cell.bottomColoredBar.backgroundColor = [UIColor colorNamed:@"Color_BlueBar"];
+    }
     
     cell.fileNameLabel.text = file.fileName;
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
@@ -102,14 +119,31 @@
     NSString *formattedDate = [formatter stringFromDate: file.modDate];
     cell.modDateLabel.text = [NSString stringWithFormat:@"modified %@", formattedDate];
     
+    cell.delegate = (id<MGSwipeTableCellDelegate>)self;
+    
     cell.rightButtons = @[ [MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"icon_Bin_small"] backgroundColor:[UIColor whiteColor]],
                           [MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"icon_Link_small"] backgroundColor:[UIColor whiteColor]],
                          [MGSwipeButton buttonWithTitle:@"" icon:[UIImage          imageNamed:@"icon_Favorite_small"] backgroundColor:[UIColor whiteColor]]];
 
-    cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
+    cell.rightSwipeSettings.transition = MGSwipeTransitionStatic;
     return cell;
 }
 
+
+-(BOOL) swipeTableCell:(nonnull MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion {
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    FileModel *file = [self.files objectAtIndex:[indexPath row]];
+    if(index == 2) { //Favorite
+        NSLog(@"Favorite button pressed at file %@", file.fileName);
+    } else if(index == 1) { //Share
+        NSLog(@"Share button pressed at file %@", file.fileName);
+    } else if(index == 0) { //Bin
+        NSLog(@"Bin button pressed at file %@", file.fileName);
+    }
+    return YES; //YES to close swipe menu, NO to keep it open.
+}
 
 /*
 // Override to support conditional editing of the table view.

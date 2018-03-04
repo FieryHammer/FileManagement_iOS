@@ -13,7 +13,9 @@
 @synthesize fileTypeImageView = _fileTypeImageView;
 @synthesize fileNameLabel = _fileNameLabel;
 @synthesize modDateLabel = _modDateLabel;
-
+@synthesize folderBar = _folderBar;
+@synthesize topColoredBar = _topColoredBar;
+@synthesize bottomColoredBar = _bottomColoredBar;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
