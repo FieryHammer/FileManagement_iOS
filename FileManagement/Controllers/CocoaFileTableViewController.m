@@ -53,6 +53,19 @@
     return self.files.count;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FileModel *file = [self.files objectAtIndex:[indexPath row]];
+    if(file.isFolder) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        CocoaFileTableViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
+        dest.folderName = file.fileName;
+        dest.title = self.folderName;
+        [self.navigationController pushViewController:dest animated:YES];
+    }
+    else {
+        NSLog(@"Clicked on file: %@", [file fileName]);
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CocoaFileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FileCell" forIndexPath:indexPath];
