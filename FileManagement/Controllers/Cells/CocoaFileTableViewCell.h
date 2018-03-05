@@ -6,8 +6,10 @@
 //  Copyright © 2018. Máté Horváth. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 #import "MGSwipeTableCell.h"
+
 
 @interface CocoaFileTableViewCell : MGSwipeTableCell
 
@@ -17,5 +19,6 @@
 @property (nonatomic, weak) IBOutlet UIStackView *folderBar;
 @property (nonatomic, weak) IBOutlet UIView *topColoredBar;
 @property (nonatomic, weak) IBOutlet UIView *bottomColoredBar;
+
 
 @end

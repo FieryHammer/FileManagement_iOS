@@ -6,7 +6,9 @@
 //  Copyright © 2018. Máté Horváth. All rights reserved.
 //
 
+
 #import "CocoaFileTableViewCell.h"
+
 
 @implementation CocoaFileTableViewCell
 
@@ -17,15 +19,19 @@
 @synthesize topColoredBar = _topColoredBar;
 @synthesize bottomColoredBar = _bottomColoredBar;
 
-- (void)awakeFromNib {
+-(void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
+-(void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected
+              animated:animated];
+    
     // Configure the view for the selected state
 }
+
 
 @end
