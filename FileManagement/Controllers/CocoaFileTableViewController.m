@@ -40,7 +40,7 @@
     self.files = [[FileModel loadAllData]valueForKey:self.folderName];
 
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // self.clearsSelectionOnViewWillAppear = false;
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -65,7 +65,7 @@
         dest.folderName = file.fileName;
         dest.title = self.folderName;
         [self.navigationController pushViewController:dest
-                                             animated:YES];
+                                             animated:true];
     }
     else
     {
@@ -77,11 +77,6 @@
 {
     CocoaFileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FileCell"
                                                                    forIndexPath:indexPath];
-    if (!cell)
-    {
-        cell = [CocoaFileTableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle
-                                         reuseIdentifier  :@"FileCell"];
-    }
 
     // Configure the cell...
 
@@ -115,36 +110,18 @@
 
     cell.fileTypeImageView.image = image;
 
-    if (!file.isFolder)
-    {
-        cell.folderBar.hidden = YES;
-    }
+    cell.folderBar.hidden = !file.isFolder;
 
-    if (   !file.isBlue
-        && !file.isOrange)
-    {
-        cell.topColoredBar.backgroundColor = UIColor.clearColor;
-        cell.bottomColoredBar.backgroundColor = UIColor.clearColor;
-    }
-    else if (   file.isBlue
-             && !file.isOrange)
-    {
-        cell.topColoredBar.backgroundColor = [UIColor colorNamed:@"Color_BlueBar"];
-        cell.bottomColoredBar.backgroundColor = [UIColor colorNamed:@"Color_BlueBar"];
-    }
-    else if (   !file.isBlue
-             && file.isOrange)
-    {
-        cell.topColoredBar.backgroundColor = [UIColor colorNamed:@"Color_OrangeBar"];
-        cell.bottomColoredBar.backgroundColor = [UIColor colorNamed:@"Color_OrangeBar"];
-    }
-    else if (   file.isBlue
-             && file.isOrange)
-    {
-        cell.topColoredBar.backgroundColor = [UIColor colorNamed:@"Color_OrangeBar"];
-        cell.bottomColoredBar.backgroundColor = [UIColor colorNamed:@"Color_BlueBar"];
-    }
-
+    cell.topColoredBar.backgroundColor = (  file.isOrange
+                                          ?[  UIColor colorNamed:@"Color_OrangeBar"]
+                                          :  (  file.isBlue
+                                              ?  [UIColor colorNamed:@"Color_BlueBar"]
+                                              :  UIColor.clearColor));
+    cell.bottomColoredBar.backgroundColor = (  file.isBlue
+                                             ?  [UIColor colorNamed:@"Color_BlueBar"]
+                                             :  (  file.isOrange
+                                                 ?  [UIColor colorNamed:@"Color_OrangeBar"]
+                                                 :  UIColor.clearColor));
     cell.fileNameLabel.text = file.fileName;
     NSDateFormatter *formatter = NSDateFormatter.new;
     [formatter setDateFormat:@"MMMM d,yyyy"];
@@ -188,7 +165,7 @@
             break;
 
     }
-    return YES; //YES to close swipe menu, NO to keep it open.
+    return true; //true to close swipe menu, false to keep it open.
 }
 
 

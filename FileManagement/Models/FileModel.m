@@ -60,12 +60,12 @@
     NSString *formattedDate = [formatter stringFromDate:self.modDate];
 
     return [NSString stringWithFormat:@"FileName: %@ \nIsFolder: %@ \nModified Date: %@ \nFile Type: %lu \nIsOrange: %@ \nIsBlue: %@ \n", self.fileName, self.isFolder
-            ? @"YES"
-                                     : @"NO", formattedDate, (unsigned long)self.fileType, self.isOrange
-            ? @"YES"
-                                     : @"NO", self.isBlue
-            ? @"YES"
-                                     : @"NO"];
+            ? @"true"
+                                     : @"false", formattedDate, (unsigned long)self.fileType, self.isOrange
+            ? @"true"
+                                     : @"false", self.isBlue
+            ? @"true"
+                                     : @"false"];
 }
 
 //Get the fileURL for the stored data
@@ -91,7 +91,7 @@
 {
     NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:dict];
     return [fileData writeToURL:[self.class fileManagerDataURL]
-                     atomically:YES];
+                     atomically:true];
 }
 
 //Generates and stores test data
@@ -110,204 +110,204 @@
     NSDateComponents *comps = NSDateComponents.new;
 
     file.fileName = @"Family Shared";
-    file.isFolder = TRUE;
+    file.isFolder = true;
     [comps setDay:5];
     [comps setMonth:6];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileFolder;
-    file.isOrange = FALSE;
-    file.isBlue = FALSE;
+    file.isOrange = false;
+    file.isBlue = false;
     [rootFolder addObject:[file copy]];
 
     file.fileName = @"For Work";
-    file.isFolder = TRUE;
+    file.isFolder = true;
     [comps setDay:2];
     [comps setMonth:7];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileFolder;
-    file.isOrange = TRUE;
-    file.isBlue = FALSE;
+    file.isOrange = true;
+    file.isBlue = false;
     [rootFolder addObject:[file copy]];
 
     file.fileName = @"WorkPowerpoint.pptx";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:2];
     [comps setMonth:7];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileDocument;
-    file.isOrange = FALSE;
-    file.isBlue = FALSE;
+    file.isOrange = false;
+    file.isBlue = false;
     [rootFolder addObject:[file copy]];
 
     file.fileName = @"Speech.docx";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:1];
     [comps setMonth:7];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileDocument;
-    file.isOrange = FALSE;
-    file.isBlue = TRUE;
+    file.isOrange = false;
+    file.isBlue = true;
     [rootFolder addObject:[file copy]];
 
     file.fileName = @"Tom's Folder";
-    file.isFolder = TRUE;
+    file.isFolder = true;
     [comps setDay:1];
     [comps setMonth:7];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileFolder;
-    file.isOrange = FALSE;
-    file.isBlue = FALSE;
+    file.isOrange = false;
+    file.isBlue = false;
     [rootFolder addObject:[file copy]];
 
     file.fileName = @"DSC119.jpg";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:1];
     [comps setMonth:7];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileImage;
-    file.isOrange = TRUE;
-    file.isBlue = TRUE;
+    file.isOrange = true;
+    file.isBlue = true;
     [rootFolder addObject:[file copy]];
 
     //[FileModel saveData:rootFolder];
 
     //Family Shared folder
     file.fileName = @"EmilyWithDog.jpg";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:2];
     [comps setMonth:8];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileImage;
-    file.isOrange = FALSE;
-    file.isBlue = TRUE;
+    file.isOrange = false;
+    file.isBlue = true;
     [familySharedFolder addObject:[file copy]];
 
     file.fileName = @"Mom's Recipes.docx";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:22];
     [comps setMonth:9];
     [comps setYear:2013];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileDocument;
-    file.isOrange = FALSE;
-    file.isBlue = FALSE;
+    file.isOrange = false;
+    file.isBlue = false;
     [familySharedFolder addObject:[file copy]];
 
     file.fileName = @"Our Summer 2013.pptx";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:13];
     [comps setMonth:8];
     [comps setYear:2013];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FilePPT;
-    file.isOrange = TRUE;
-    file.isBlue = FALSE;
+    file.isOrange = true;
+    file.isBlue = false;
     [familySharedFolder addObject:[file copy]];
 
     file.fileName = @"2014 Christmas.mp4";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:25];
     [comps setMonth:12];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileMovie;
-    file.isOrange = FALSE;
-    file.isBlue = FALSE;
+    file.isOrange = false;
+    file.isBlue = false;
     [familySharedFolder addObject:[file copy]];
 
     //For Work folder
     file.fileName = @"ToDoList.doc";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:20];
     [comps setMonth:9];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileDocument;
-    file.isOrange = TRUE;
-    file.isBlue = FALSE;
+    file.isOrange = true;
+    file.isBlue = false;
     [forWorkFolder addObject:[file copy]];
 
     file.fileName = @"LogoDesigns_pres.ppt";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:21];
     [comps setMonth:9];
     [comps setYear:2014];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FilePPT;
-    file.isOrange = FALSE;
-    file.isBlue = TRUE;
+    file.isOrange = false;
+    file.isBlue = true;
     [forWorkFolder addObject:[file copy]];
 
     //Tom's Folder
     file.fileName = @"Homework";
-    file.isFolder = TRUE;
+    file.isFolder = true;
     [comps setDay:10];
     [comps setMonth:1];
     [comps setYear:2011];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileFolder;
-    file.isOrange = FALSE;
-    file.isBlue = FALSE;
+    file.isOrange = false;
+    file.isBlue = false;
     [tomsFolder addObject:[file copy]];
 
     file.fileName = @"My Puppy.jpeg";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:16];
     [comps setMonth:5];
     [comps setYear:2012];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileImage;
-    file.isOrange = TRUE;
-    file.isBlue = FALSE;
+    file.isOrange = true;
+    file.isBlue = false;
     [tomsFolder addObject:[file copy]];
 
     file.fileName = @"Rock music.mp3";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:16];
     [comps setMonth:5];
     [comps setYear:2012];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileMusic;
-    file.isOrange = FALSE;
-    file.isBlue = TRUE;
+    file.isOrange = false;
+    file.isBlue = true;
     [tomsFolder addObject:[file copy]];
 
     //Homework folder
     file.fileName = @"Shakespeare Biography.docx";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:10];
     [comps setMonth:1];
     [comps setYear:2011];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileDocument;
-    file.isOrange = TRUE;
-    file.isBlue = FALSE;
+    file.isOrange = true;
+    file.isBlue = false;
     [homeworkFolder addObject:[file copy]];
 
     file.fileName = @"French Essay.docx";
-    file.isFolder = FALSE;
+    file.isFolder = false;
     [comps setDay:10];
     [comps setMonth:1];
     [comps setYear:2011];
     file.modDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
     file.fileType = FileDocument;
-    file.isOrange = FALSE;
-    file.isBlue = FALSE;
+    file.isOrange = false;
+    file.isBlue = false;
     [homeworkFolder addObject:[file copy]];
 
     FileModel *file2 = [FileModel.alloc initWithNameAndAll:@"Violet Mountains"
-                                                  isFolder:NO
+                                                  isFolder:false
                                                    modDate:[[NSCalendar currentCalendar] dateFromComponents:comps]
                                                   fileType:FileImage
-                                                  isOrange:TRUE
-                                                    isBlue:FALSE];
+                                                  isOrange:true
+                                                    isBlue:true];
 
     [familySharedFolder addObject:[file2 copy]];
 
@@ -372,12 +372,12 @@
 
     if (copy)
     {
-        [copy setFileName:[[self fileName] copy]];
-        [copy setIsFolder:[self isFolder]];
-        [copy setModDate:[[self modDate] copy]];
-        [copy setFileType:[self fileType]];
-        [copy setIsOrange:[self isOrange]];
-        [copy setIsBlue:[self isBlue]];
+        [copy setFileName:[self.fileName copy]];
+        [copy setIsFolder:self.isFolder];
+        [copy setModDate:[self.modDate copy]];
+        [copy setFileType:self.fileType];
+        [copy setIsOrange:self.isOrange];
+        [copy setIsBlue:self.isBlue];
     }
     return copy;
 }
