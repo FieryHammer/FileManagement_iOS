@@ -30,8 +30,6 @@ typedef NS_ENUM (NSUInteger, FileTypeEnum)
 @property (nonatomic, assign) BOOL          isOrange;
 @property (nonatomic, assign) BOOL          isBlue;
 
-+(id)fileModelWithNameType: (NSString *) fileName fileType: (FileTypeEnum) fileType;
-+(id)fileModelWithNameAndEverything:(NSString *) fileName isFolder: (BOOL)isFolder modDate: (NSDate *)modDate fileType:(FileTypeEnum) fileType isOrange: (BOOL)isOrange isBlue: (BOOL)isBlue;
 
 -(id)initWithNameType: (NSString *) fileName fileType: (FileTypeEnum) fileType;
 -(id)initWithNameAndAll:(NSString *) fileName isFolder: (BOOL)isFolder modDate: (NSDate *)modDate fileType:(FileTypeEnum) fileType isOrange: (BOOL)isOrange isBlue: (BOOL)isBlue;

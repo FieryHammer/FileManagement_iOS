@@ -6,8 +6,10 @@
 //  Copyright © 2018. Máté Horváth. All rights reserved.
 //
 
+
 #import <XCTest/XCTest.h>
 #import "FileModel.h"
+
 
 @interface FileModelIntTests : XCTestCase
 
@@ -15,21 +17,24 @@
 
 @implementation FileModelIntTests
 
-- (void)setUp {
+-(void)setUp
+{
     [super setUp];
-    
+
     [FileModel saveTestData];
 }
 
-- (void)tearDown {
+-(void)tearDown
+{
     [super tearDown];
 }
 
-- (void)testLoadAllData {
+-(void)testLoadAllData
+{
     NSInteger expectedCount = 5;
-    
+
     NSDictionary *fileDict = [FileModel loadAllData];
-    
+
     XCTAssertEqual([[fileDict allKeys]count], expectedCount);
     XCTAssertTrue([[fileDict allKeys]containsObject:@"Tom's Folder"]);
 }

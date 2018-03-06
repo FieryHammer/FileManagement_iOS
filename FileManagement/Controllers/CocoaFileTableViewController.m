@@ -25,31 +25,25 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.tableView.estimatedRowHeight = 75.0;
     self.tableView.rowHeight = 75.0;
-    
-    if ([self.folderName length] == 0)
+
+    if (self.folderName.length == 0)
     {
         self.folderName = @"rootFolder";
     }
-    
+
     self.title = self.folderName;
-    
+
     [FileModel saveTestData];
     self.files = [[FileModel loadAllData]valueForKey:self.folderName];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
--(void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -62,7 +56,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FileModel *file = [self.files objectAtIndex:[indexPath row]];
+    FileModel *file = [self.files objectAtIndex:indexPath.row];
     if (file.isFolder)
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
@@ -75,7 +69,7 @@
     }
     else
     {
-        NSLog(@"Clicked on file: %@", [file fileName]);
+        NSLog(@"Clicked on file: %@", file.fileName);
     }
 }
 
@@ -85,16 +79,16 @@
                                                                    forIndexPath:indexPath];
     if (!cell)
     {
-        cell = [[CocoaFileTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                           reuseIdentifier  :@"FileCell"];
+        cell = [CocoaFileTableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle
+                                         reuseIdentifier  :@"FileCell"];
     }
-    
+
     // Configure the cell...
-    
-    FileModel *file = [self.files objectAtIndex:[indexPath row]];
-    
-    UIImage *image = [[UIImage alloc] init];
-    
+
+    FileModel *file = [self.files objectAtIndex:indexPath.row];
+
+    UIImage *image = UIImage.new;
+
     switch (file.fileType)
     {
         case FileFolder:
@@ -118,19 +112,19 @@
             image = [UIImage imageNamed:@"icon_Folder"];
             break;
     }
-    
+
     cell.fileTypeImageView.image = image;
-    
+
     if (!file.isFolder)
     {
         cell.folderBar.hidden = YES;
     }
-    
+
     if (   !file.isBlue
         && !file.isOrange)
     {
-        cell.topColoredBar.backgroundColor = [UIColor clearColor];
-        cell.bottomColoredBar.backgroundColor = [UIColor clearColor];
+        cell.topColoredBar.backgroundColor = UIColor.clearColor;
+        cell.bottomColoredBar.backgroundColor = UIColor.clearColor;
     }
     else if (   file.isBlue
              && !file.isOrange)
@@ -150,95 +144,52 @@
         cell.topColoredBar.backgroundColor = [UIColor colorNamed:@"Color_OrangeBar"];
         cell.bottomColoredBar.backgroundColor = [UIColor colorNamed:@"Color_BlueBar"];
     }
-    
+
     cell.fileNameLabel.text = file.fileName;
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *formatter = NSDateFormatter.new;
     [formatter setDateFormat:@"MMMM d,yyyy"];
     NSString *formattedDate = [formatter stringFromDate:file.modDate];
     cell.modDateLabel.text = [NSString stringWithFormat:@"modified %@", formattedDate];
-    
+
     cell.delegate = (id<MGSwipeTableCellDelegate>)self;
-    
+
     cell.rightButtons = @[ [MGSwipeButton buttonWithTitle:@""
                                                      icon:[UIImage imageNamed:@"icon_Bin_small"]
-                                          backgroundColor:[UIColor whiteColor]],
+                                          backgroundColor:UIColor.clearColor],
                            [MGSwipeButton buttonWithTitle:@""
                                                      icon:[UIImage imageNamed:@"icon_Link_small"]
-                                          backgroundColor:[UIColor whiteColor]],
+                                          backgroundColor:UIColor.clearColor],
                            [MGSwipeButton buttonWithTitle:@""
                                                      icon:[UIImage imageNamed:@"icon_Favorite_small"]
-                                          backgroundColor:[UIColor whiteColor]]];
-    
+                                          backgroundColor:UIColor.clearColor]];
+
     cell.rightSwipeSettings.transition = MGSwipeTransitionStatic;
     return cell;
 }
 
 -(BOOL) swipeTableCell:(nonnull MGSwipeTableCell *) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion
 {
-    
+
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    
-    FileModel *file = [self.files objectAtIndex:[indexPath row]];
-    if (index == 2)  //Favorite
+
+    FileModel *file = [self.files objectAtIndex:indexPath.row];
+    switch (index)
     {
-        NSLog(@"Favorite button pressed at file %@", file.fileName);
-    }
-    else if (index == 1)    //Share
-    {
-        NSLog(@"Share button pressed at file %@", file.fileName);
-    }
-    else if (index == 0)    //Bin
-    {
-        NSLog(@"Bin button pressed at file %@", file.fileName);
+        case 2:
+            NSLog(@"Favorite button pressed at file %@", file.fileName);
+            break;
+        case 1:
+            NSLog(@"Share button pressed at file %@", file.fileName);
+            break;
+        case 0:
+            NSLog(@"Bin button pressed at file %@", file.fileName);
+            break;
+        default:
+            break;
+
     }
     return YES; //YES to close swipe menu, NO to keep it open.
 }
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- 
- 
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 
 @end

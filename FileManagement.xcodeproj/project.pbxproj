@@ -144,15 +144,15 @@
 		F1E7A5A8202F48F20035967F /* FileManagement */ = {
 			isa = PBXGroup;
 			children = (
-				F1E7A5CE202F49940035967F /* Models */,
 				F1E7A5CD202F48FB0035967F /* Controllers */,
+				F1E7A5CE202F49940035967F /* Models */,
 				F1E7A5A9202F48F20035967F /* AppDelegate.h */,
 				F1E7A5AA202F48F30035967F /* AppDelegate.m */,
+				F1E7A5B8202F48F30035967F /* main.m */,
+				F1E7A5B4202F48F30035967F /* LaunchScreen.storyboard */,
 				F1E7A5AF202F48F30035967F /* Main.storyboard */,
 				F1E7A5B2202F48F30035967F /* Assets.xcassets */,
-				F1E7A5B4202F48F30035967F /* LaunchScreen.storyboard */,
 				F1E7A5B7202F48F30035967F /* Info.plist */,
-				F1E7A5B8202F48F30035967F /* main.m */,
 			);
 			path = FileManagement;
 			sourceTree = "<group>";
@@ -160,9 +160,9 @@
 		F1E7A5C1202F48F30035967F /* FileManagementTests */ = {
 			isa = PBXGroup;
 			children = (
+				F138D9BB2030993600829548 /* FileModelIntTests.m */,
 				F1E7A5E6203077C50035967F /* FileModelTests.m */,
 				F1E7A5C4202F48F30035967F /* Info.plist */,
-				F138D9BB2030993600829548 /* FileModelIntTests.m */,
 			);
 			path = FileManagementTests;
 			sourceTree = "<group>";
